@@ -53,20 +53,43 @@ function activateFilter() {
   //map, filter, reduce 함수는 DOM요소에 사용할 수 없어 Arry.from()을 사용하여 배열로 변환
   Array.from(imageElements).filter((imageElement) => {
     imageElement.classList.add("hide");
+    //imageElement.classList.remove("show");
 
-    if (
-      imageElement.getAttribute("data-filter") === selectedBtn ||
-      selectedBtn === "all"
-    ) {
-      imageElement.classList.remove("hide");
-      imageElement.classList.add("show");
-    } else {
-      imageElement.classList.remove("show");
-      imageElement.classList.add("hide");
-    }
+    // 시간지연함수
+    setTimeout(() => {
+      if (
+        imageElement.getAttribute("data-filter") === selectedBtn ||
+        selectedBtn === "all"
+      ) {
+        imageElement.classList.remove("hide");
+        imageElement.classList.add("show");
+      } else {
+        imageElement.classList.remove("show");
+        imageElement.classList.add("hide");
+      }
+    }, 100); // 1st parameter: callback function, 2nd prameter: ms
   });
 }
 
 btns.forEach(function (btn) {
   btn.addEventListener("click", activateFilter);
+});
+
+// activate light box when click each image
+const showLightBox = (e) => {
+  const target = e.currentTarget;
+  const selectedImage = target.children[0].children[0].getAttribute("src");
+  const categoryName = target.getAttribute("data-filter");
+
+  const lightBoxImage = document.querySelector(".light-box-image img");
+  const categoryElement = document.querySelector(".light-box-text .title p");
+  // getAttribute(): 파라미터 속성 값 가져오기
+  // setAttribute(a, b): a: 속성 이름, b: 변경할 속성 값
+  // a.textContent = b: a 요소에 b 텍스트 입력
+  lightBoxImage.setAttribute("src", selectedImage);
+  categoryElement.textContent = categoryName;
+};
+
+imageElements.forEach((imageElement) => {
+  imageElement.addEventListener("click", showLightBox);
 });

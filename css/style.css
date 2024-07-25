@@ -108,3 +108,63 @@ body {
 .filter-images .filter-image:hover span::after {
   opacity: 0.3;
 }
+
+/* light-box style */
+.light-box {
+  width: 50%;
+  height: auto;
+  background-color: #316764;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1rem;
+  border-radius: 0.25rem;
+  animation: box-scale 0.3s 1;
+  z-index: 1;
+  display: none;
+}
+
+@keyframes box-scale {
+  from {
+    transform: translate(-50%, -50%) scale(0.3);
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+
+.light-box .light-box-text {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1rem;
+}
+
+.light-box .light-box-text .title {
+  color: #fff;
+}
+.light-box .light-box-text button {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+}
+.light-box .light-box-image {
+  border: 1px solid #fff;
+  padding: 0.25rem;
+  border-radius: 0.25rem;
+}
+
+.light-box img {
+  width: 100%;
+  display: block;
+}
+
+.overlay {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.4;
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: none;
+}
