@@ -29,6 +29,8 @@ body {
   width: 100%;
   height: auto;
   display: flex;
+  gap: 0.25rem;
+  margin-bottom: 1rem;
 }
 
 .filter-btns .filter-btn {
@@ -36,4 +38,73 @@ body {
   outline: 0;
   width: 16.66%;
   padding: 0.5rem 0;
+  background: #316764;
+  color: #fff;
+}
+
+.filter-btns .filter-btn:hover,
+.filter-btns .filter-btn.active {
+  background-color: #609687;
+}
+
+/* filter image box style */
+
+.filter-images {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.filter-images .filter-image {
+  width: 25%;
+  padding: 0.25rem;
+  animation: scale 0.3s 1;
+}
+
+.filter-images .filter-image.hide {
+  display: none;
+}
+
+.filter-images .filter-image.show {
+  display: block;
+}
+
+@keyframes scale {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.filter-images .filter-image span {
+  padding: 0.25rem;
+  background: #316764;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 1px solid #fff;
+  position: relative;
+}
+
+.filter-images .filter-image img {
+  width: 100%;
+  display: block;
+}
+
+.filter-images .filter-image span::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.filter-images .filter-image:hover span::after {
+  opacity: 0.3;
 }

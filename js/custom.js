@@ -1,17 +1,21 @@
-// creat button element
-const btns = ["all", "bag", "shoe", "watch", "camera", "headphone"];
+// create button element
+const btnsChars = ["all", "bag", "shoe", "watch", "camera", "headphone"];
 const filter_btns = document.querySelector(".filter-btns");
 
-btns.map((v) => {
-  const modifiedChar = v.charAt(0).toUpperCase() + v.slice(1);
+btnsChars.map((btnsChar) => {
+  const modifiedChar = btnsChar.charAt(0).toUpperCase() + btnsChar.slice(1);
 
   const btn_element = `
-    <button class="filter-btn" data-filter="${v}}">${modifiedChar}</button>
+    <button class="filter-btn" data-filter="${btnsChar}">${modifiedChar}</button>
   `;
   filter_btns.insertAdjacentHTML("beforeend", btn_element);
 });
 
-// creat images element
+// first button add active class
+const btns = document.querySelectorAll(".filter-btn");
+btns[0].classList.add("active");
+
+// create images element
 const imgs = [
   "bag-1.jpg",
   "camera-1.jpg",
@@ -33,4 +37,36 @@ imgs.map((v) => {
     </div>
   `;
   imagesWrapper.insertAdjacentHTML("beforeend", img_element);
+});
+
+// create filter image
+
+const imageElements = document.querySelectorAll(".filter-image");
+
+function activateFilter() {
+  btns.forEach((btn) => {
+    btn.classList.remove("active");
+  });
+  this.classList.add("active");
+  const selectedBtn = this.getAttribute("data-filter");
+
+  //map, filter, reduce 함수는 DOM요소에 사용할 수 없어 Arry.from()을 사용하여 배열로 변환
+  Array.from(imageElements).filter((imageElement) => {
+    imageElement.classList.add("hide");
+
+    if (
+      imageElement.getAttribute("data-filter") === selectedBtn ||
+      selectedBtn === "all"
+    ) {
+      imageElement.classList.remove("hide");
+      imageElement.classList.add("show");
+    } else {
+      imageElement.classList.remove("show");
+      imageElement.classList.add("hide");
+    }
+  });
+}
+
+btns.forEach(function (btn) {
+  btn.addEventListener("click", activateFilter);
 });
