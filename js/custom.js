@@ -53,7 +53,6 @@ function activateFilter() {
   //map, filter, reduce 함수는 DOM요소에 사용할 수 없어 Arry.from()을 사용하여 배열로 변환
   Array.from(imageElements).filter((imageElement) => {
     imageElement.classList.add("hide");
-    //imageElement.classList.remove("show");
 
     // 시간지연함수
     setTimeout(() => {
@@ -76,6 +75,9 @@ btns.forEach(function (btn) {
 });
 
 // activate light box when click each image
+const lightBox = document.querySelector(".light-box");
+const overlay = document.querySelector(".overlay");
+
 const showLightBox = (e) => {
   const target = e.currentTarget;
   const selectedImage = target.children[0].children[0].getAttribute("src");
@@ -88,8 +90,24 @@ const showLightBox = (e) => {
   // a.textContent = b: a 요소에 b 텍스트 입력
   lightBoxImage.setAttribute("src", selectedImage);
   categoryElement.textContent = categoryName;
+
+  lightBox.style.display = "block";
+  overlay.style.display = "block";
 };
 
 imageElements.forEach((imageElement) => {
   imageElement.addEventListener("click", showLightBox);
 });
+
+// close light box
+const closeBtn = document.querySelector(".close");
+const closeLightBox = () => {
+  lightBox.style.display = "none";
+  overlay.style.display = "none";
+};
+
+//closeBtn.addEventListener("click", closeLightBox);
+//overlay.addEventListener("click", closeLightBox);
+[closeBtn, overlay].forEach((element) =>
+  element.addEventListener("click", closeLightBox)
+);

@@ -61,12 +61,12 @@ body {
   animation: scale 0.3s 1;
 }
 
-.filter-images .filter-image.hide {
-  display: none;
-}
-
 .filter-images .filter-image.show {
   display: block;
+}
+
+.filter-images .filter-image.hide {
+  display: none;
 }
 
 @keyframes scale {
@@ -142,6 +142,8 @@ body {
 
 .light-box .light-box-text .title {
   color: #fff;
+  display: flex;
+  column-gap: 0.75rem;
 }
 .light-box .light-box-text button {
   padding: 0.25rem 0.75rem;
