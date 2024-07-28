@@ -1,0 +1,87 @@
+/* Reset Style */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #555;
+}
+
+/* Common Style */
+.container {
+  width: 100%;
+  height: auto;
+  max-width: 1260px;
+  margin: auto;
+}
+
+/* Header Style */
+header {
+  border-top: 1px solid #ececec;
+  border-bottom: 1px solid #ececec;
+}
+
+header > .container {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+}
+
+header .logo {
+  position: relative;
+}
+
+header .logo a {
+  position: relative;
+  width: 60px;
+  display: block;
+}
+
+header .logo a b {
+  text-indent: -999px;
+  display: inline-block;
+  position: absolute;
+}
+
+header .logo img {
+  width: 100%;
+}
+
+.nav {
+  list-style: none;
+
+  display: flex;
+  gap: 40px;
+}
+
+.nav a {
+  text-decoration: none;
+  color: #555;
+  position: relative;
+}
+
+/* nav의 자식인 li 중에서 active 클래스를 가진 요소의 자식 a 의제 태그에만 밑줄 */
+.nav li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #555;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: all 0.4s;
+}
+
+.nav li:hover a::after,
+.nav li.active a::after {
+  width: 100%;
+}
