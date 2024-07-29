@@ -23,93 +23,18 @@
         <button><i class="ri-search-line"></i></button>
       </div>
       <div id="map">
-        <img src="map.jpg" alt="" />
+        <!-- <img src="map.png" alt=""> -->
       </div>
-
-      <script>
-        navigator.geolocation.getCurrentPosition((position) => {
-          // console.log(position)
-          const lat = position.coords.latitude;
-          const lng = position.coords.longitude;
-          // console.log(lat, lng);
-
-          startLenderMap(lat, lng);
-        });
-
-        function startLenderMap(lat, lng) {
-          var map = new naver.maps.Map("map", {
-            center: new naver.maps.LatLng(lat, lng),
-            zoom: 13,
-          });
-
-          var marker = new naver.maps.Marker({
-            position: new naver.maps.LatLng(lat, lng),
-            map: map,
-          });
-        }
-      </script>
 
       <div class="detail_box">
         <div class="guide">
           <i class="ri-arrow-drop-up-line"></i>
         </div>
-        <div class="detail_wrapper">
-          <div class="detail_title">
-            <h2>판교인생</h2>
-          </div>
-          <div class="detail_info">
-            <div class="info_1">
-              <h3>도서</h3>
-              <h3>4229개</h3>
-            </div>
-            <div class="info_2">
-              <h3>도서</h3>
-              <h3>4229개</h3>
-            </div>
-            <div class="info_3">
-              <h3>도서</h3>
-              <h3>4229개</h3>
-            </div>
-            <div class="info_4">
-              <h3>도서</h3>
-              <h3>4229개</h3>
-            </div>
-          </div>
 
-          <div class="detail_text">
-            <div class="time">
-              <div class="time_title">운영시간</div>
-              <div class="time_contents">
-                <p class="weekdays">09:00 ~ 18:00(평일)</p>
-                <p class="weekend">09:00 ~ 14:00(주말)</p>
-                <p class="holiday">공휴일 휴관</p>
-              </div>
-            </div>
-
-            <div class="tell">
-              <div class="tell_title">연락처</div>
-              <div class="tell_content">
-                <p>02-123-4567</p>
-              </div>
-            </div>
-
-            <div class="addr">
-              <div class="addr_title">주소</div>
-              <div class="addr_contents">
-                <p>서울 강북구 한천로124다길 62</p>
-              </div>
-            </div>
-
-            <div class="homepage">
-              <div class="homepage_title">홈페이지</div>
-              <div class="homepage_contents">
-                <p><a href="https://www.abc.com">https://www.abc.com</a></p>
-              </div>
-            </div>
-          </div>
-        </div>
+        <div class="detail_wrapper"></div>
       </div>
     </div>
+    <script src="js/data.js"></script>
     <script src="js/app.js"></script>
   </body>
 </html>
