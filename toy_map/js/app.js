@@ -4,8 +4,8 @@ const guideIcon = document.querySelector(".guide i");
 const detailBox = document.querySelector(".detail_box");
 const detailHeight = detailBox.offsetHeight;
 
-// detailBox.style.bottom = -detailHeight + "px";
-detailBox.style.bottom = 0;
+detailBox.style.bottom = -detailHeight + "px";
+// detailBox.style.bottom = 0;
 
 detailGuide.addEventListener("click", function () {
   this.classList.toggle("active");

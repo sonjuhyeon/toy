@@ -133,6 +133,8 @@
 .detail_info {
   display: flex;
   gap: 4px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #ccc;
 }
 
 .detail_info > div {
@@ -153,10 +155,41 @@
   border-bottom: 0;
 }
 
-.detail_text > div {
-  border: 1px solid;
+.detail_text {
+  width: 100%;
+  margin-top: 12px;
 }
 
-.detail_text > div > div {
-  border: 1px solid;
+.detail_text > div {
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.detail_text > div > div > p {
+  padding-left: 20px;
+}
+
+.detail_text > div > div > p:first-child {
+  position: relative;
+}
+
+.detail_text > div > div > p:first-child::before {
+  content: "";
+  width: 1px;
+  height: 50%;
+  background: #bbb;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.detail_text > div > div:nth-child(1) {
+  width: 20%;
+  text-align: right;
+}
+
+.detail_text > div > div:nth-child(2) {
+  width: 80%;
+  padding-left: 20px;
 }

@@ -11,7 +11,10 @@
       referrerpolicy="no-referrer"
     />
     <!-- m3tjx61ua6 -->
-    <!-- <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=m3tjx61ua6"></script> -->
+    <script
+      type="text/javascript"
+      src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=m3tjx61ua6"
+    ></script>
   </head>
   <body>
     <div class="wrapper">
@@ -23,7 +26,7 @@
         <img src="map.jpg" alt="" />
       </div>
 
-      <!-- <script>
+      <script>
         navigator.geolocation.getCurrentPosition((position) => {
           // console.log(position)
           const lat = position.coords.latitude;
@@ -44,7 +47,7 @@
             map: map,
           });
         }
-      </script> -->
+      </script>
 
       <div class="detail_box">
         <div class="guide">
@@ -74,28 +77,33 @@
           </div>
 
           <div class="detail_text">
-            <div class="text-left">
-              <div class="time">
-                <p>운영시간</p>
-              </div>
-              <div class="tell">
-                <p>연락처</p>
-              </div>
-              <div class="addr">
-                <p>주소</p>
-              </div>
-            </div>
-            <div class="text-right">
+            <div class="time">
+              <div class="time_title">운영시간</div>
               <div class="time_contents">
                 <p class="weekdays">09:00 ~ 18:00(평일)</p>
                 <p class="weekend">09:00 ~ 14:00(주말)</p>
                 <p class="holiday">공휴일 휴관</p>
               </div>
-              <div class="tell_contents">
+            </div>
+
+            <div class="tell">
+              <div class="tell_title">연락처</div>
+              <div class="tell_content">
                 <p>02-123-4567</p>
               </div>
+            </div>
+
+            <div class="addr">
+              <div class="addr_title">주소</div>
               <div class="addr_contents">
                 <p>서울 강북구 한천로124다길 62</p>
+              </div>
+            </div>
+
+            <div class="homepage">
+              <div class="homepage_title">홈페이지</div>
+              <div class="homepage_contents">
+                <p><a href="https://www.abc.com">https://www.abc.com</a></p>
               </div>
             </div>
           </div>
