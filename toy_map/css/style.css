@@ -1,3 +1,15 @@
+/* @import url(); */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* body{
+  font
+} */
+
 .wrapper {
   width: 100%;
   height: 100vh;
@@ -5,28 +17,58 @@
   margin: auto;
   border: 1px solid #000;
   position: relative;
+  overflow: hidden;
 }
 
 .search {
   position: absolute;
   width: 80%;
-  background: #aaa;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px #ccc;
   top: 100px;
   left: 50%;
   transform: translateX(-50%);
   padding: 14px 16px;
   display: flex;
   justify-content: space-between;
-  gap: 4px;
+  z-index: 999;
 }
 
 .search input {
   width: 80%;
   padding: 10px 14px;
+  outline: 0;
+  border: 1px solid #bbb;
+  border-right: 0;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+.search input::placeholder {
+  color: #bbb;
 }
 
 .search button {
   width: 20%;
+  outline: 0;
+  background: #fff;
+  border: 1px solid #bbb;
+  border-left: 0;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  position: relative;
+}
+
+.search button::before {
+  width: 1px;
+  height: 70%;
+  background: #bbb;
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 #map {
@@ -43,10 +85,13 @@
   width: 100%;
   height: 400px;
   background: #fff;
-  border: 1px solid #000;
   position: absolute;
   z-index: 999;
   bottom: 0;
+  box-shadow: 0 0 10px #ccc;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transition: all 0.2s ease-in-out;
 }
 
 .guide {
@@ -56,14 +101,62 @@
   background: #fff;
   left: 50%;
   top: -30px;
+  box-shadow: 0 -4px 10px #ccc;
   transform: translateX(-50%);
   border-top-left-radius: 15px;
   border-top-right-radius: 15px;
-  border: 1px solid #000;
   display: flex;
   justify-content: center;
 }
 
 .guide i {
   font-size: 25px;
+}
+
+.detail_wrapper {
+  padding: 10px 15px;
+}
+
+.detail_title {
+  border-bottom: 1px solid #bbb;
+  margin-bottom: 12px;
+}
+
+.detail_title h2 {
+  font-size: 18px;
+  font-weight: 500;
+  width: 100%;
+  text-align: center;
+  padding: 12px 0;
+}
+
+.detail_info {
+  display: flex;
+  gap: 4px;
+}
+
+.detail_info > div {
+  padding: 8px 15px;
+  border: 2px solid #ccc;
+  width: 25%;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.detail_info > div > h3 {
+  font-size: 16px;
+  font-weight: 400;
+  border-bottom: 1px solid #ccc;
+}
+
+.detail_info > div > h3:last-child {
+  border-bottom: 0;
+}
+
+.detail_text > div {
+  border: 1px solid;
+}
+
+.detail_text > div > div {
+  border: 1px solid;
 }

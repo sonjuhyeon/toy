@@ -4,12 +4,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Map App</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css"
       referrerpolicy="no-referrer"
     />
+    <!-- m3tjx61ua6 -->
+    <!-- <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=m3tjx61ua6"></script> -->
   </head>
   <body>
     <div class="wrapper">
@@ -18,15 +20,88 @@
         <button><i class="ri-search-line"></i></button>
       </div>
       <div id="map">
-        <img src="map.png" alt="" />
+        <img src="map.jpg" alt="" />
       </div>
+
+      <!-- <script>
+        navigator.geolocation.getCurrentPosition((position) => {
+          // console.log(position)
+          const lat = position.coords.latitude;
+          const lng = position.coords.longitude;
+          // console.log(lat, lng);
+
+          startLenderMap(lat, lng);
+        });
+
+        function startLenderMap(lat, lng) {
+          var map = new naver.maps.Map("map", {
+            center: new naver.maps.LatLng(lat, lng),
+            zoom: 13,
+          });
+
+          var marker = new naver.maps.Marker({
+            position: new naver.maps.LatLng(lat, lng),
+            map: map,
+          });
+        }
+      </script> -->
 
       <div class="detail_box">
         <div class="guide">
           <i class="ri-arrow-drop-up-line"></i>
         </div>
+        <div class="detail_wrapper">
+          <div class="detail_title">
+            <h2>판교인생</h2>
+          </div>
+          <div class="detail_info">
+            <div class="info_1">
+              <h3>도서</h3>
+              <h3>4229개</h3>
+            </div>
+            <div class="info_2">
+              <h3>도서</h3>
+              <h3>4229개</h3>
+            </div>
+            <div class="info_3">
+              <h3>도서</h3>
+              <h3>4229개</h3>
+            </div>
+            <div class="info_4">
+              <h3>도서</h3>
+              <h3>4229개</h3>
+            </div>
+          </div>
+
+          <div class="detail_text">
+            <div class="text-left">
+              <div class="time">
+                <p>운영시간</p>
+              </div>
+              <div class="tell">
+                <p>연락처</p>
+              </div>
+              <div class="addr">
+                <p>주소</p>
+              </div>
+            </div>
+            <div class="text-right">
+              <div class="time_contents">
+                <p class="weekdays">09:00 ~ 18:00(평일)</p>
+                <p class="weekend">09:00 ~ 14:00(주말)</p>
+                <p class="holiday">공휴일 휴관</p>
+              </div>
+              <div class="tell_contents">
+                <p>02-123-4567</p>
+              </div>
+              <div class="addr_contents">
+                <p>서울 강북구 한천로124다길 62</p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <script src="app.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>
