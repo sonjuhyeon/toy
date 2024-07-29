@@ -9,7 +9,6 @@ detailBox.style.bottom = -detailHeight + "px";
 
 detailGuide.addEventListener("click", function () {
   this.classList.toggle("active");
-
   if (this.classList.contains("active")) {
     guideIcon.setAttribute("class", "ri-arrow-drop-down-line");
     detailBox.style.bottom = 0;
@@ -109,7 +108,11 @@ function startLenderMap(lat, lng) {
 
   function getInfoOnMarker(markerInfoData) {
     // console.log(markerInfoData);
+
     const infoWrapper = document.querySelector(".detail_wrapper");
+    detailBox.style.bottom = 0;
+    detailGuide.classList.add("active");
+    guideIcon.setAttribute("class", "ri-arrow-drop-down-line");
     infoWrapper.innerHTML = "";
 
     const {
