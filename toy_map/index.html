@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Map App</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css"
@@ -18,12 +18,15 @@
   </head>
   <body>
     <div class="wrapper">
+      <div class="loading">
+        <img src="loading.gif" alt="" />
+      </div>
       <div class="search">
         <input type="text" placeholder="지역 또는 도서관명 검색..." />
         <button><i class="ri-search-line"></i></button>
       </div>
       <div id="map">
-        <!-- <img src="map.png" alt=""> -->
+        <!-- <img src="map.jpg" alt=""> -->
       </div>
 
       <div class="detail_box">
@@ -34,7 +37,7 @@
         <div class="detail_wrapper"></div>
       </div>
     </div>
-    <script src="data.js"></script>
-    <script src="app.js"></script>
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>
